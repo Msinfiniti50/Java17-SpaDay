@@ -1,26 +1,25 @@
 body {
-    background-color: pink;
+    border: 3px solid pink;
 }
 
-div {
+div, h1, h2, table {
     margin: auto;
     width: 50%;
     padding: 10px;
     text-align: center;
     background-color: white;
+
+
 }
 
-h1 {
-    margin: auto;
-        width: 50%;
-        padding: 10px;
-        text-align: center;
-        background-color: white;
+footer {
+    display:flex;
+    justify-content: center;
+    padding: 10px;
 }
 
-table {
-    margin: auto;
-            width: 50%;
-            padding: 10px;
-            text-align: center;
-}
+.polish {
+    width:50px;
+    height:50px;
+    margin:5px;
+ }

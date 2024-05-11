@@ -3,13 +3,61 @@
 <head>
     <meta charset="UTF-8" />
     <title>Spa Menu</title>
-    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link href="../static/styles.css" th:href="@{/styles.css}" rel="stylesheet" />
 </head>
 <body>
 <h1>My Super Fancy Spa</h1>
 <div id = "clientProfile">
+    <h2>My Profile</h2>
+    <p th:text="${name}">Name</p>
+    <p th:text="${skintype}">Skin Type</p>
+    <p th:text="${manipedi}">Manipedi</p>
 </div>
+<h2>Menu of Available Services</h2>
 <div id = "servicesMenu">
+    <table>
+            <thead>
+            <tr>
+                <th>Facial Treatments</th>
+            </tr>
+            <tr>
+                <td>
+            <div class="treatment-description">
+                The facial treatments below are recommended
+                by our estheticians for your given skin type.
+            </div>
+            </td>
+</tr>
+            </thead>
+            <tbody>
+            <tr th:each="facial : ${appropriateFacials}">
+            <td
+                 th:text="${facial}"></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    <div
+       th:if="${manipedi == 'manicure'}">
+        <h3>Manicure</h3>
+        <div th:replace="fragments :: manicureDescription"></div>
+        </div>
+    <div th:if="${manipedi == 'pedicure'}">
+        <h3>Pedicure</h3>
+        <div th:replace="fragments :: pedicureDescription"></div>
+    </div>
+
 </div>
+<footer>
+    <div class="polish" style="background-color: red;"></div>
+    <div class="polish" style="background-color: blue;"></div>
+    <div class="polish" style="background-color: yellow;"></div>
+    <div class="polish" style="background-color: limegreen;"></div>
+    <div class="polish" style="background-color: orange;"></div>
+    <div class="polish" style="background-color: deeppink;"></div>
+    <div class="polish" style="background-color: purple;"></div>
+    <div class="polish" style="background-color: turquoise;"></div>
+</footer>
 </body>
 </html>
