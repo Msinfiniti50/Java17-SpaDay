@@ -8,7 +8,8 @@ import java.util.ArrayList;
 
 @Controller
 public class SpaDayController {
-
+    public static void main(String [] args) {
+    }
     public boolean checkSkinType(String skinType, String facialType) {
         return switch (skinType) {
             case "oily" -> facialType.equals("Microdermabrasion") || facialType.equals("Rejuvenating");
@@ -66,3 +67,5 @@ public class SpaDayController {
         return "menu";
     }
 }
+
+
